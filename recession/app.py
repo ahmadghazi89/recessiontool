@@ -12,7 +12,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     """Return the homepage."""
-    executable_path = {'executable_path': os.environ.get('GOOGLE_CHROME_BIN', '') or 'chromedriver.exe'}
+    executable_path = {'executable_path': os.environ.get('GOOGLE_CHROME_EXE', '') or 'chromedriver.exe'}
     browser = Browser('chrome', **executable_path, headless=True)
 
     url = 'https://www.leggmason.com/global/campaigns/clearbridge-aor-recession-indicator-tool.html'

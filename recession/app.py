@@ -22,9 +22,9 @@ def index():
     soup = BeautifulSoup(html, "html.parser")
 
     value = soup.find("span", id="gauge-value").get_text
-	
-	browser.quit()
-	
+    
+    browser.quit()
+    
     return render_template("index.html",percent=int(value)/100, percent2=int(value))
 
 if __name__ == "__main__":

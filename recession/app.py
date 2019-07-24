@@ -5,13 +5,14 @@ from selenium import webdriver
 from flask import Flask, jsonify, render_template, request, redirect
 import json
 import requests
+import os
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
     """Return the homepage."""
-    executable_path = {'executable_path': 'chromedriver.exe'}
+    executable_path = {'executable_path': os.environ.get('GOOGLE_CHROME_BIN', '') or 'chromedriver.exe'}
     browser = Browser('chrome', **executable_path, headless=True)
 
     url = 'https://www.leggmason.com/global/campaigns/clearbridge-aor-recession-indicator-tool.html'

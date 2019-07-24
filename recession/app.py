@@ -21,7 +21,7 @@ def index():
     html = browser.html
     soup = BeautifulSoup(html, "html.parser")
 
-    value = soup.find("span", id="gauge-value").get_text
+    value = soup.find("span", id="gauge-value").get_text()
     
     browser.quit()
     

@@ -16,3 +16,4 @@ gunicorn==19.0.0
 splinter==0.10.0
 bs4==0.0.1
 requests==2.21.0
+chromedriver==2.24.1
